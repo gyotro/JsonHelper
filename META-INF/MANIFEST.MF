@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1589212814070
+Build-Jdk: 1.8.0_191
+Built-By: InnovatesApp
+Bundle-ManifestVersion: 2
+Bundle-Name: JsonHelper
+Bundle-SymbolicName: JsonHelper
+Bundle-Version: 2.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.helper;version="2.0.0.SNAPSHOT"
+Import-Package: groovy.json;version="[2.5,3)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-4.2.0.201903051501

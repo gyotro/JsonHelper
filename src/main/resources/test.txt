@@ -1,0 +1,3 @@
+prova inserimento file risorsa
+prova inserimento reference ${project.name} e ${os.name} and Java ${java.version}
+${artifactId}
