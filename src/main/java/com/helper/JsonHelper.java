@@ -17,21 +17,7 @@ import groovy.json.JsonSlurper;
 public class JsonHelper
 {
     public JsonHelper(){}
-    public static String convertEpoch_to_date(long timeInMillis)
-    {
-        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        Calendar calendar = new GregorianCalendar();
-        format.setTimeZone(calendar.getTimeZone());
-        return format.format(timeInMillis);
-    }
-    public static String convertEpoch_to_date(long timeInMillis, String formatIn)
-    {
-        SimpleDateFormat format = new SimpleDateFormat(formatIn);
-        Calendar calendar = new GregorianCalendar();
-        format.setTimeZone(calendar.getTimeZone());
-        return format.format(timeInMillis);
-    }
+   
     public static List<?> lookUpValueFieldFromJson_fromList( List<Map<?,?>> jsonArray, String sField )
     {
         String sVal;
@@ -168,10 +154,9 @@ public class JsonHelper
                 .range(0, listIn.size())
                 .filter(i -> ((i < listIn.size() - 1 && !listIn.get(i).equals(listIn
                         .get(i + 1))) || i == listIn.size() - 1) )
-                .mapToObj(i -> listIn.get(i)).collect(Collectors.toList());
+                .mapToObj(i -> listIn.get(i))
+                .collect(Collectors.toList());
 
         return acc;
     }
-
-
 }

@@ -49,7 +49,21 @@ public class DateHelper {
         LocalDate local = LocalDate.parse(sDate, dateTimeFormatterIn);
         return local.format(dateTimeFormatterOut);
     }
-
+     public static String convertEpoch_to_date(long timeInMillis)
+    {
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Calendar calendar = new GregorianCalendar();
+        format.setTimeZone(calendar.getTimeZone());
+        return format.format(timeInMillis);
+    }
+    public static String convertEpoch_to_date(long timeInMillis, String formatIn)
+    {
+        SimpleDateFormat format = new SimpleDateFormat(formatIn);
+        Calendar calendar = new GregorianCalendar();
+        format.setTimeZone(calendar.getTimeZone());
+        return format.format(timeInMillis);
+    }
     public static String parseLocalTime(String sDate, String sPatternIn, String sPatternOut)
     {
         /*
