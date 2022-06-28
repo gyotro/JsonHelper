@@ -72,14 +72,15 @@ public class DateHelper {
         return local.format(dateTimeFormatterOut);
     }
 
-
-
     public static String getActualDateAndTime()
     {
         return getActualDateTime.get();
     }
 
     public static void main(String[] args) {
+
+        // Some usage examples
+        
         Instant inst1 = Instant.now();
         System.out.println(getActualDate.get());
         System.out.println( getActualDateAndTime() );
